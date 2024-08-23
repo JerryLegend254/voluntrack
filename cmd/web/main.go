@@ -1,20 +1,27 @@
 package main
 
 import (
+	"html/template"
 	"log"
 	"net/http"
 )
 
-func main() {
-	mux := http.NewServeMux()
+type application struct {
+	templateCache map[string]*template.Template
+}
 
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello VolunTrack!"))
-	})
+func main() {
+
+	tc, err := newTemplateCache("./ui/html/")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	app := &application{templateCache: tc}
 
 	srv := http.Server{
 		Addr:    ":8080",
-		Handler: mux,
+		Handler: app.routes(),
 	}
 
 	log.Println("Server started on port 8080")
