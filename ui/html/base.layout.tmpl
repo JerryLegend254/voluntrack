@@ -4,11 +4,27 @@
 <head>
 <title>{{template "title" .}} - VolunTrack</title>
 <meta charset="utf-8">
+<link rel="stylesheet" href="/static/css/styles.css">
 </head>
-<body>
-<div>
-    <h1>VolunTrack</h1>
-</div>
+<body class="flex flex-col h-full w-full">
+<header class="px-12 py-8 flex items-center justify-between">
+    <h1 class="font-bold text-2xl">VolunTrack</h1>
+    <ul class="flex gap-4">
+    <li class="">
+        <a href="/volunteers">Volunteers</a>
+    </li>
+    <li class="">
+        <a href="/events">Events</a>
+    </li>
+    <li class="">
+        <a href="/organizations">Organizations</a>
+        </li>
+        </ul>
+        <div class="flex gap-4">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+</header>
 
 {{template "content" .}}
 {{template "footer" .}}
@@ -16,6 +32,52 @@
 </html>
 
 {{end}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -9,6 +9,9 @@ import (
 func (app *application) routes() http.Handler {
 	r := chi.NewRouter()
 
+	fileServer := http.FileServer(http.Dir("./ui/static/"))
+	r.Handle("/static/*", http.StripPrefix("/static", fileServer))
+
 	r.Get("/", app.home)
 
 	return r
