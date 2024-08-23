@@ -22,6 +22,16 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 			return nil, err
 		}
 
+		ts, err = ts.ParseGlob(filepath.Join(dir, "*.layout.tmpl"))
+		if err != nil {
+			return nil, err
+		}
+
+		ts, err = ts.ParseGlob(filepath.Join(dir, "*.partial.tmpl"))
+		if err != nil {
+			return nil, err
+		}
+
 		cache[name] = ts
 	}
 
