@@ -29,5 +29,22 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 	}
 
 	// Write the buffer to the response writer
-	buf.WriteTo(w)
+	_, err = buf.WriteTo(w)
+	if err != nil {
+		app.serverError(w, err)
+	}
+}
+
+func (app *application) serverError(w http.ResponseWriter, err error) {
+	log.Println(err)
+
+	http.Error(w, "Internal server error", http.StatusInternalServerError)
+}
+
+func (app *application) clientError(w http.ResponseWriter, status int) {
+	http.Error(w, "Bad request", status)
+}
+
+func (app *application) notFound(w http.ResponseWriter) {
+	app.clientError(w, http.StatusNotFound)
 }
