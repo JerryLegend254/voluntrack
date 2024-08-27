@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"log"
 	"net/http"
 )
 
@@ -12,7 +11,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 
 	// If template not found in cache, log error and return
 	if !ok {
-		log.Fatal("Could not get template from cache")
+		app.errorLog.Fatal("Could not get template from cache")
 		return
 	}
 
@@ -24,7 +23,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 
 	// If there was an error executing the template, log error and return
 	if err != nil {
-		log.Fatal("Could not execute template")
+		app.errorLog.Fatal("Could not execute template")
 		return
 	}
 
@@ -36,7 +35,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 }
 
 func (app *application) serverError(w http.ResponseWriter, err error) {
-	log.Println(err)
+	app.errorLog.Println(err)
 
 	http.Error(w, "Internal server error", http.StatusInternalServerError)
 }
