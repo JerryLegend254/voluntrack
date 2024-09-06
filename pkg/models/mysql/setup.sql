@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS voluntrack;
+
 CREATE TABLE `volunteers` (
   `email` varchar(255) NOT NULL PRIMARY KEY,
   `first_name` varchar(255),
