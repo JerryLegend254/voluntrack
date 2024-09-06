@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/JerryLegend254/voluntrack/pkg/models/mysql"
 )
 
 type application struct {
@@ -29,7 +31,15 @@ func main() {
 		errorLog.Fatal(err)
 	}
 
-	_, err = openDB(*dsn)
+	db, err := openDB(*dsn)
+
+	if err != nil {
+		errorLog.Fatal(err)
+	}
+
+	defer db.Close()
+
+	err = mysql.SetUpDB(db)
 	if err != nil {
 		errorLog.Fatal(err)
 	}
