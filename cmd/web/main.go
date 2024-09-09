@@ -6,8 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-
-	"github.com/JerryLegend254/voluntrack/pkg/models/mysql"
 )
 
 type application struct {
@@ -38,11 +36,6 @@ func main() {
 	}
 
 	defer db.Close()
-
-	err = mysql.SetUpDB(db)
-	if err != nil {
-		errorLog.Fatal(err)
-	}
 
 	app := &application{templateCache: tc, infoLog: infoLog, errorLog: errorLog}
 

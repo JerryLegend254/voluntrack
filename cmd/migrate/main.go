@@ -1,10 +1,11 @@
 package main
 
 import (
+	"database/sql"
 	"log"
 	"os"
 
-	"github.com/go-sql-driver/mysql"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/golang-migrate/migrate/v4"
 
 	mysqlMigrate "github.com/golang-migrate/migrate/v4/database/mysql"
@@ -12,20 +13,9 @@ import (
 )
 
 func main() {
-	configs := mysql.Config{
-		User:                 "root",
-		Passwd:               "pass254",
-		Net:                  "tcp",
-		Addr:                 "3307",
-		DBName:               "voluntrack",
-		AllowNativePasswords: true,
-		ParseTime:            true,
-	}
-	db, err := db.NewSQLStorage(configs)
-	if err != nil {
-		log.Fatal(err)
-	}
 
+	dsn := "root:pass254@tcp(localhost:3307)/voluntrack?parseTime=true"
+	db, err := sql.Open("mysql", dsn)
 	driver, err := mysqlMigrate.WithInstance(db, &mysqlMigrate.Config{})
 	if err != nil {
 		log.Fatal(err)
