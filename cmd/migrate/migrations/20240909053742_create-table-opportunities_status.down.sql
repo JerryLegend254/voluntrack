@@ -1,1 +1,1 @@
-DROP table  opportunities_status if exists;
+DROP table if exists opportunities_status;

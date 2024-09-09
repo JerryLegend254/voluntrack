@@ -1,1 +1,1 @@
-ALTER TABLE `opportunities` ADD FOREIGN KEY (`organization_email`) REFERENCES `organizations` (`email`);
+ALTER TABLE `opportunities` ADD FOREIGN KEY (`status`) REFERENCES `opportunities_status` (`ost_id`);

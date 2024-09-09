@@ -1,1 +1,1 @@
-DROP table if exists volunteer_skills;
+DROP table if exists volunteer_skill;
