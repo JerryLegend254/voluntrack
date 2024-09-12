@@ -1,369 +1,47 @@
-{{template "base" .}}
-{{define "title"}}Home{{end}}
+{{template "base" .}} {{define "title"}}Home{{ end }}
 {{define "content"}}
 {{template "header" .}}
 <main class="flex flex-row flex-1 px-32 justify-center py-24">
-<div class="flex flex-row items-center justify-between flex-1">
-<div class="flex flex-col gap-6 w-[30%]">
-<p class="text-6xl font-bold capitalize w-[400px]">Do something great to help others</p>
-<p class="font-bold text-gray-700">Voluntrack is a digital platform for collecting donations to be distributed to people in need</p>
-<div class="flex flex-row gap-8">
-<button class="px-8 py-3 bg-green-800 text-white font-bold rounded-2xl capitalize">Donate now</button>
-<button class="px-8 py-3 border-2 border-green-800 text-green-800  font-bold rounded-2xl capitalize">Watch Video</button>
-</div>
+  <div class="flex flex-row items-center justify-between flex-1">
+    <div class="flex flex-col gap-8 w-[30%]">
+      <p class="text-6xl font-bold capitalize w-[400px]">
+        Do something great to help others
+      </p>
+      <p class="font-bold text-gray-700">
+        Voluntrack is a digital platform for collecting donations to be
+        distributed to people in need
+      </p>
+      <div class="flex flex-row gap-8">
+        <button
+          class="px-8 py-3 bg-green-800 text-white font-bold rounded-2xl capitalize"
+        >
+          Donate now
+        </button>
+        <button
+          class="px-8 py-3 border-2 border-green-800 text-green-800 font-bold rounded-2xl capitalize"
+        >
+          Watch Video
+        </button>
+      </div>
 
+      <div class="flex flex-row gap-8">
+        {{ range.Stats }}
+        <div class="flex flex-col">
+          <p class="text-4xl font-bold">{{.Value}}</p>
+          <p class="capitalize font-bold text-gray-700 break-words w-[100px]">
+            {{.Description}}
+          </p>
+          <p></p>
+        </div>
 
-<div class="flex flex-row gap-8">
-{{range .Stats}}
-<div class="flex flex-col">
-<p class="text-4xl font-bold">{{.Value}}</p>
-<p class="capitalize font-bold text-gray-700 break-words w-[100px]">{{.Description}}<p>
-</div>
-{{end}}
-</div>
-</div>
-<div class="flex">
-<p class="">Image goes here</p>
-</div>
-</div>
-
+        {{ end }}
+      </div>
+    </div>
+    <div class="flex">
+    <image src="/static/images/hero-image.png" alt="hero-image" class="h-[400px]" />
+    </div>
+  </div>
 </main>
-{{end}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{{ end }}
 
 
