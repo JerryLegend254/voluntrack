@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./ui/html/**/*.tmpl}", "./**/**/**/*.tmpl"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#14532d",
+        secondary: "#854d0e",
+      },
+    },
   },
   plugins: [],
 };

@@ -23,7 +23,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 
 	// If there was an error executing the template, log error and return
 	if err != nil {
-		app.errorLog.Fatal("Could not execute template")
+		app.errorLog.Fatal("Could not execute template", err)
 		return
 	}
 

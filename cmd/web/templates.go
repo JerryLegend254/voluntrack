@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 )
 
-type templateData struct{}
+type templateData struct{ Stats []Stat }
 
 func newTemplateCache(dir string) (map[string]*template.Template, error) {
 	cache := map[string]*template.Template{}
