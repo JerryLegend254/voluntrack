@@ -20,9 +20,9 @@
         Donate now
       </button>
       <button
-        class="px-8 py-3 border-2 border-green-800 text-green-800 font-bold rounded-2xl capitalize"
+        class="px-8 py-3 border-2 border-green-800 text-green-800 font-bold rounded-2xl capitalize flex items-center gap-4"
       >
-        Watch Video
+        <i class="fa-solid fa-play"></i> <span>Watch Video</span>
       </button>
     </div>
 
@@ -51,10 +51,7 @@
   class="flex flex-row items-center justify-between flex-1 h-screen snap-start px-32"
 >
   <div class="flex">
-    <image
-      src="/static/images/about-us.png"
-      alt="hero-image"
-    />
+    <image src="/static/images/about-us.png" alt="hero-image" />
   </div>
   <div class="flex flex-col gap-8 w-[500px]">
     <p class="uppercase font-black text-lg text-amber-500">About us</p>
@@ -69,7 +66,7 @@
         <div
           class="flex justify-center items-center p-4 w-10 h-10 bg-red-200 rounded-full"
         >
-          <p class="text-red-500 font-bold">D</p>
+          <i class="fa-solid fa-hand-holding-heart text-red-600"></i>
         </div>
         <div class="flex flex-col gap-4">
           <p class="font-bold text-xl">Donate</p>
@@ -84,7 +81,7 @@
         <div
           class="flex justify-center items-center p-4 w-10 h-10 bg-yellow-200 rounded-full"
         >
-          <p class="text-yellow-500 font-bold">V</p>
+          <i class="fa-solid fa-handshake text-yellow-700"></i>
         </div>
         <div class="flex flex-col gap-4">
           <p class="font-bold text-xl">Volunteer</p>
@@ -99,25 +96,3 @@
 </div>
 
 {{ end }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
