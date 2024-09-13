@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body class="flex flex-col w-full">
-    {{template "content" .}}
+    <main class="snap-y snap-mandatory">
+      {{template "content" .}}
+    </main>
     {{template "footer" .}}
   </body>
 </html>
 
 {{ end }}
-
-
