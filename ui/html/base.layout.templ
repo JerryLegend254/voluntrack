@@ -1,0 +1,29 @@
+package html
+
+import "github.com/JerryLegend254/voluntrack/ui/html/components"
+
+templ BaseLayout(title string) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{ title } - VolunTrack</title>
+			<meta charset="utf-8"/>
+			<link
+				rel="stylesheet"
+				href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+				integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+				crossorigin="anonymous"
+				referrerpolicy="no-referrer"
+			/>
+			<link rel="stylesheet" href="/static/css/styles.css"/>
+		</head>
+		<body class="flex flex-col w-full">
+			<main class="snap-y snap-mandatory"></main>
+			@components.Footer()
+			<script src="https://example.com/fontawesome/v6.6.0/js/fontawesome.js" data-auto-replace-svg="nest"></script>
+			<script src="https://example.com/fontawesome/v6.6.0/js/solid.js"></script>
+			<script src="https://example.com/fontawesome/v6.6.0/js/brands.js"></script>
+			<script src="/static/js/script.js"></script>
+		</body>
+	</html>
+}

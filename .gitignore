@@ -1,2 +1,4 @@
 tmp/
 ui/static/css/styles.css
+*_templ.go
+*_templ.txt
