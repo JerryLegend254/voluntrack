@@ -1,6 +1,9 @@
 tailwind:
 	@tailwindcss -i ui/static/css/main.css -o ui/static/css/styles.css --watch
 
+templ:
+	@templ generate -watch -proxy=http://localhost:8080
+
 air:
 	@air
 
